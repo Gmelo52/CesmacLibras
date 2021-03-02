@@ -1,21 +1,51 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { Component } from "react";
+import { View, Text, StyleSheet, TouchableOpacity, Button } from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
+import Icon from "react-native-vector-icons/AntDesign";
 
-export default function App() {
+import Splash from "./src/pages/splash";
+import Inicio from "./src/pages/inicio";
+import comoFunc from "./src/pages/comoFunc";
+import Home from './src/pages/home';
+
+const Stack = createStackNavigator();
+
+export default function App({ navigation }) {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="splash">
+        <Stack.Screen
+          name="inicio"
+          component={Inicio}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="splash"
+          component={Splash}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="comoFunc"
+          component={comoFunc}
+          options={{
+            headerTitle: "Como funciona?",
+            headerStyle: {
+              backgroundColor: "#fff",
+            },
+            headerTitleStyle: {
+              color: "#519548",
+              fontSize:20,
+            },
+            headerLeft: () => {},
+          }}
+        />
+        <Stack.Screen
+          name="home"
+          component={Home}
+          options={{ headerShown: false }}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
