@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
     },
     textoTitulo:{
         color:"#fff",
-        fontSize:70,
+        fontSize:30,
         fontWeight: "bold",
     },
     boxButton:{

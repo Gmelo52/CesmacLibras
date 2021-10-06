@@ -17,7 +17,7 @@ const Home = () => {
     <View style={styles.container}>
       <View style={styles.boxVideo}>
         <WebView
-          style={{ flex: 1}}
+          style={{ flex: 1 }}
           javaScriptEnabled={true}
           source={{
             uri: `https://www.youtube.com/embed/${id}`,
@@ -34,7 +34,7 @@ const Home = () => {
           <Text style={{ fontSize: 22, marginBottom: 10 }}>
             Seja bem-vindo!
           </Text>
-          <Text style={{ fontSize: 16, color: "#c4c4c4" }}>
+          <Text style={{ fontSize: 16, color: "#519548" }}>
             Acolhimento na saúde
           </Text>
         </View>
@@ -67,7 +67,20 @@ const Home = () => {
             </TouchableOpacity>
           </View>
           <View style={styles.itemLista}>
-            <Text style={{ color: "#519548", fontSize: 20 }}>Pedir RG</Text>
+            <Text style={{ color: "#519548", fontSize: 20 }}>Boa Noite!</Text>
+            <TouchableOpacity
+              onPress={() => {
+                setid("NMK47NwDxzw");
+              }}
+            >
+              <Image
+                source={require("../../assets/btn_play.png")}
+                style={{ width: 35, height: 35 }}
+              />
+            </TouchableOpacity>
+          </View>
+          <View style={styles.itemLista}>
+            <Text style={{ color: "#519548", fontSize: 20 }}>Pedir identificação</Text>
             <TouchableOpacity
               onPress={() => {
                 setid("E6KQvHmFwbs");
@@ -109,19 +122,7 @@ const Home = () => {
               />
             </TouchableOpacity>
           </View>
-          <View style={styles.itemLista}>
-            <Text style={{ color: "#519548", fontSize: 20 }}>Boa Noite!</Text>
-            <TouchableOpacity
-              onPress={() => {
-                setid("NMK47NwDxzw");
-              }}
-            >
-              <Image
-                source={require("../../assets/btn_play.png")}
-                style={{ width: 35, height: 35 }}
-              />
-            </TouchableOpacity>
-          </View>
+
         </ScrollView>
       </View>
     </View>

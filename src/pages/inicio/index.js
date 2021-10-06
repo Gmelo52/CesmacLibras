@@ -7,7 +7,7 @@ const Inicio = ({navigation}) => {
     return (
         <ImageBackground source={require('../../assets/InicioBg.png')} style={styles.image}>
             <View style={styles.boxTitulo}>
-                <Text style={styles.textoTitulo}>Libras</Text>
+                <Text style={styles.textoTitulo}>Hand Cure</Text>
             </View>
             <View style={styles.boxButton}>
                 <TouchableOpacity style={styles.botaoComoFunciona} onPress={() => navigation.navigate('comoFunc')}>  
